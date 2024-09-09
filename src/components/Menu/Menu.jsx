@@ -1,11 +1,28 @@
 import React from "react";
 import "./Menu.css";
+import { useNavigate, Link } from "react-router-dom";
 
-function Menu(){
+function Menu({loggedIn, setLoggedIn}){
+  console.log(setLoggedIn);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    setLoggedIn(false);
+    navigate("/");
+  }
+
+  const handleProfile = () => {
+    if (loggedIn) {
+      navigate("/profile");
+    } else {
+      navigate("/login");
+    }
+  }
+
     return(
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">PhoSto</a>
+          <Link className="navbar-brand" to="/">PhoSto</Link>
           <button className="navbar-toggler" 
           type="button" 
           data-bs-toggle="collapse" 
@@ -18,14 +35,20 @@ function Menu(){
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <a className="nav-link" aria-current="page" href="/">Home</a>
+                <Link className="nav-link" aria-current="page" to="/">Home</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/dashboard">Dashboard</a>
+                <Link className="nav-link" to="/dashboard" >Dashboard</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/contact">Contact</a>
-              </li>               
+                <Link className="nav-link" to="/profile" onClick={handleProfile}>My Profile</Link>
+              </li>
+              {loggedIn && (
+                
+                <li className="nav-item">
+                  <button className="nav-link" onClick={handleLogout}>Logout</button>
+                </li>
+              )}               
             </ul>            
           </div>
         </div>

@@ -9,8 +9,7 @@
 
 /* Hover effect */
 .navbar-nav .nav-item .nav-link:hover {
-    background-color: rgb(161, 157, 157);
-    color: white;
+    color: rgb(65, 8, 8);
 }
 
 /* create line bottom */
@@ -30,21 +29,6 @@
 .navbar-nav .nav-item .nav-link:hover::before,
 .navbar-nav .nav-item .nav-link:hover::after {
     transform: scaleX(1);
-}
-
-/* Keyframes for bouncing animation */
-@keyframes bounce {
-    from {
-      transform: translateY(0px);
-    }
-    to {
-      transform: translateY(-20px);
-    }
-  }
-
-
-.navbar-nav .nav-item .nav-link:hover {
-    animation: bounce 300ms alternate infinite;
 }
 
 /* the active link */
