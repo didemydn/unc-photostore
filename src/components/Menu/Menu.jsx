@@ -3,7 +3,6 @@ import "./Menu.css";
 import { useNavigate, Link } from "react-router-dom";
 
 function Menu({loggedIn, setLoggedIn}){
-  console.log(setLoggedIn);
   const navigate = useNavigate();
 
   const handleLogout = () => {

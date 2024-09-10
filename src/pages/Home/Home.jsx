@@ -77,7 +77,7 @@ function Home({loggedIn}){
 
     return(
             <div className="container home">
-                <h1>Welcome to PhoSto Photo Gallery</h1>
+                <h3>Welcome to PhoSto Photo Gallery</h3>
                 <p>This is a photo gallery app showcasing various photos taken by different photographers in Amsterdam. You can buy a single photo as you like and downloaded as much as you like!</p>              
                 <div className="row">
                     {photos.map((photo, index) => (
