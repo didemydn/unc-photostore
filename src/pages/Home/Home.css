@@ -97,22 +97,6 @@
     display: block;
 }
 
-.close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-}
-
 .modal-info-overlay {
     position: absolute;
     top: 0;
@@ -131,7 +115,12 @@
 }
 
 .modal-info-overlay p {
+    margin: 10px 0;    
+}
+
+.modal-info-overlay .question {
     margin: 10px 0;
+    font-size: 1.5rem;    
 }
 
 .modal-info-overlay button {

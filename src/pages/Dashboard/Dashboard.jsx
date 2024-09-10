@@ -6,12 +6,36 @@ function Dashboard({loggedIn}){
 
     const navigate = useNavigate();
 
+    const purchasedPhotos = [
+        {
+            src:"/home-photos/andrew-hawkes.jpg",
+            alt:"andrew-hawkes",
+        },
+        {
+            src:"/home-photos/antone-adi.jpg",
+            alt:"antone-adi",
+        },       
+        {
+            src: "/home-photos/harvey.jpg",
+            alt: "harvey",
+        }        
+    ]
+
     return(
-        <section className="py-5 text-center container dashboard">
+        <section className="container dashboard">
             {loggedIn ? (
                 <div>
-                   <h1> Welcome to Dashboard</h1>
-                   <p className="text-body-secondary">Heloooooo</p>
+                   <h5> Welcome to your Dashboard</h5>
+                   <p className="text-body-secondary">Here are the photos you've purchased</p>
+                   <div className="">
+                    {purchasedPhotos.map((photo, index) => (
+                        <div className="col md-6" key={index}>
+                            <div className="card mb-4 box-shadow">
+                                <img src={photo.src} alt={photo.alt} className="card-img-top"/>
+                            </div>
+                        </div>
+                    ))}                
+                   </div>
                 </div>
             ) : (
                 <div className="row py-lg-5">

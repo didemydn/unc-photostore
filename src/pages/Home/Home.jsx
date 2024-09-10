@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Home.css";
 import { useNavigate } from "react-router-dom";
 
-function Home(){
+function Home({loggedIn}){
 
     const [modal, setModal] = useState(false);
     const [currentPhoto, setCurrentPhoto] = useState(null);
@@ -68,8 +68,13 @@ function Home(){
     }
 
     const handleYesButton = () => {
+        if (loggedIn) {
+            navigate("/purchase");
+        } else {
         navigate("/login");
-    }
+        }
+    };
+
     return(
             <div className="container home">
                 <h1>Welcome to PhoSto Photo Gallery</h1>
@@ -92,14 +97,13 @@ function Home(){
 
                 {modal && (
                     <div className="modal">
-                        <div className="modal-content">
-                            <span className="close" onClick={closeModal}>&times;</span>
+                        <div className="modal-content">                            
                             <div className="modal-photo-container">
                                 <img src={currentPhoto.src} alt={currentPhoto.alt} />
                                 <div className="modal-info-overlay">
                                     <div>
                                     <p>{currentPhoto.info}</p>
-                                    <p>Do you want to buy this photo?</p>
+                                    <p className="question">Hey! Do you want to purchase this photo?</p>
                                     </div>
                                     <div>
                                     <button className="btn-secondary" onClick={handleYesButton}>Yes</button> 
