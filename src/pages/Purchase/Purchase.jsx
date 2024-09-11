@@ -5,7 +5,7 @@ function Purchase() {
     return (
         <section className="py-5 text-center container">
             <h1>Hello!</h1>
-            <h4>Please provide card details.</h4>
+            <h4>Please provide credit card details.</h4>
             <div>
                     <form>
                         <div className="mb-3">

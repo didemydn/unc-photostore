@@ -1,11 +1,10 @@
-/* Container styling */
-.container {
+.container.login {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
+    background-color: darkgray;
 }
 
-/* Form styling */
 .login-form .form-label .form-input {
     background-color: #f8f9fa;
     border-radius: 8px;
@@ -13,7 +12,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Button styling */
 .btn-submit {
     width: 100%;
     padding: 10px;
@@ -26,7 +24,6 @@
     transition: background-color 0.3s ease;
 }
 
-/* Button hover effect */
 .btn-submit:hover {
     background-color: #0056b3;
 }

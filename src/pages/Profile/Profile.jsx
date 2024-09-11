@@ -1,15 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Profile.css";
 import { useNavigate } from "react-router-dom";
 
 function Profile({loggedIn}){
     const navigate = useNavigate();
+    const [loading, setLoading] = useState(true); 
 
     useEffect(() => {
         if(!loggedIn) {
             navigate("/login", { state: { from: "/profile" } });
+        } else {
+            setTimeout(() => setLoading(false), 300); 
         }
     }, [loggedIn, navigate]);
+
+    if (loading) return <div>Loading...</div>;
 
     return(
         <section className="profile-container py-5 text-center container">

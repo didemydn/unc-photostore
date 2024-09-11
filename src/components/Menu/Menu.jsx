@@ -40,12 +40,12 @@ function Menu({loggedIn, setLoggedIn}){
                 <Link className="nav-link" to="/dashboard" >Dashboard</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/profile" onClick={handleProfile}>My Profile</Link>
+                <Link className="nav-link" to={loggedIn ? "/profile" : "/login"} aria-label={loggedIn ? "Go to Profile" : "Login to view Profile"} onClick={handleProfile}>My Profile</Link>
               </li>
               {loggedIn && (
                 
                 <li className="nav-item">
-                  <button className="nav-link" onClick={handleLogout}>Logout</button>
+                  <button className="nav-link" onClick={handleLogout} aria-label="Logout">Logout</button>
                 </li>
               )}               
             </ul>            

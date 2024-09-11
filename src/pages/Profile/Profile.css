@@ -1,6 +1,7 @@
 .profile-container {
     max-width: 600px;
     margin: 0 auto;
+    background-color: rgb(116, 113, 113);
 }
 
 .profile-card {

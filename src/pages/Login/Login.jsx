@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Login.css";
 import { useLocation, useNavigate } from "react-router-dom";
 
-function Login({setLoggedIn}){
+function Login({setLoggedIn, loggedIn}){
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -11,6 +11,13 @@ function Login({setLoggedIn}){
 
     const navigate=useNavigate();
     const location = useLocation();
+
+    useEffect(() => {
+        if (loggedIn) {
+          const from = location.state?.from || "/profile";
+          navigate(from); // Redirect if already logged in
+        }
+      }, [loggedIn, navigate, location.state]);
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -23,21 +30,25 @@ function Login({setLoggedIn}){
             setLoggedIn(true);
             setError("");
             const from = location.state?.from || "/profile";
-            navigate(from);
-        } else {
+            setTimeout(() => {
+                navigate(from); // Navigate after login
+              }, 100); // Optional slight delay to allow state update
+            } else {
             setError("Wrong email or password. Please try again.");
         }
     }    
     
+    if (loggedIn) return null;
+    
     return(
-        <div className="container">
+        <div className="container login">
             <form onSubmit={handleLogin}>
                 <div className="mb-3">
                     <label className="form-control" htmlFor="email">Email</label>
                     <input 
                     type="text" 
                     className="form-control" 
-                    id="exampleInputEmail1" 
+                    id="email" 
                     aria-describedby="emailHelp" 
                     placeholder="enter your email" 
                     required
@@ -49,13 +60,13 @@ function Login({setLoggedIn}){
                     <input 
                     type="password" 
                     className="form-control" 
-                    id="exampleInputPassword1" 
+                    id="password" 
                     placeholder="enter your password" 
                     required
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}></input>
                 </div>
-                {error && <div className="alert alert-danger">{error}</div>}
+                {error && <div className="alert alert-danger" role="alert">{error}</div>}
                 <button type="submit" className="btn btn-secondary my-2">Login</button>
             </form>
         </div>

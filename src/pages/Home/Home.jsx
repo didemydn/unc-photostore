@@ -96,10 +96,10 @@ function Home({loggedIn}){
                 </div>
 
                 {modal && (
-                    <div className="modal">
+                    <div className="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true">
                         <div className="modal-content">                            
                             <div className="modal-photo-container">
-                                <img src={currentPhoto.src} alt={currentPhoto.alt} />
+                                <img src={currentPhoto.src} alt={currentPhoto.alt}/>
                                 <div className="modal-info-overlay">
                                     <div>
                                     <p>{currentPhoto.info}</p>

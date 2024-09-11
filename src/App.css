@@ -1,28 +1,17 @@
-/* Flip transition styles */
-.flip-enter {
-  transform: rotateY(90deg);
-  opacity: 0;
-}
-.flip-enter-active {
-  transform: rotateY(0deg);
-  opacity: 1;
-  transition: transform 600ms ease-in-out, opacity 600ms ease-in-out;
-}
-.flip-exit {
-  transform: rotateY(0deg);
-  opacity: 1;
-}
-.flip-exit-active {
-  transform: rotateY(-90deg);
-  opacity: 0;
-  transition: transform 600ms ease-in-out, opacity 600ms ease-in-out;
-}
-
-/* Page transition container */
-.page-transition {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden; /* Ensure no overflow during transition */
-  perspective: 1000px; /* Perspective for 3D effect */
-}
+.fade-enter {
+    opacity: 0;
+  }
+  
+  .fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+  }
+  
+  .fade-exit {
+    opacity: 1;
+  }
+  
+  .fade-exit-active {
+    opacity: 0;
+    transition: opacity 300ms ease-in;
+  }

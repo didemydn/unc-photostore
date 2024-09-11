@@ -22,15 +22,15 @@ function Dashboard({loggedIn}){
     ]
 
     return(
-        <section className="container dashboard">
+        <div className="dashboard">
             {loggedIn ? (
                 <div>
                    <h5> Welcome to your Dashboard</h5>
                    <p className="text-body-secondary">Here are the photos you've purchased</p>
-                   <div className="">
+                   <div className="card-container">
                     {purchasedPhotos.map((photo, index) => (
-                        <div className="col md-6" key={index}>
-                            <div className="card mb-4 box-shadow">
+                        <div className="col" key={index}>
+                            <div className="card mb-4">
                                 <img src={photo.src} alt={photo.alt} className="card-img-top"/>
                             </div>
                         </div>
@@ -38,14 +38,15 @@ function Dashboard({loggedIn}){
                    </div>
                 </div>
             ) : (
-                <div className="row py-lg-5">
-                <div className="mx-auto">
-                    <h1 className="fw-light">DASHBOARD</h1>
-                    <p className="text-body-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis luctus libero, nec facilisis magna. Integer vitae mauris felis. In ac finibus mauris, vel aliquam risus. Suspendisse quis blandit quam, sit amet interdum eros. Praesent sodales orci id dui commodo rhoncus at vitae leo. Vivamus scelerisque augue et est rhoncus laoreet. Donec et consequat dolor. Sed ultricies non mi et mattis. Praesent facilisis aliquet dui vel accumsan.</p>
+                <div className="">
+                <div className="">
+                    <h1 className="fw-light">Hello!</h1>
+                    <p className="text-body-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis luctus libero, nec facilisis magna. Integer vitae mauris felis. In ac finibus mauris, vel aliquam risus. Suspendisse quis blandit quam, sit amet interdum eros. Praesent sodales orci id dui commodo rhoncus at vitae leo. Vivamus scelerisque augue et est rhoncus laoreet. Donec et consequat dolor. Sed ultricies non mi et mattis. Praesent facilisis aliquet dui vel accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis luctus libero, nec facilisis magna. Integer vitae mauris felis. In ac finibus mauris, vel aliquam risus. Suspendisse quis blandit quam, sit amet interdum eros. Praesent sodales orci id dui commodo rhoncus at vitae leo. Vivamus scelerisque augue et est rhoncus laoreet. Donec et consequat dolor. Sed ultricies non mi et mattis. Praesent facilisis aliquet dui vel accumsan.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis luctus libero, nec facilisis magna. Integer vitae mauris felis. In ac finibus mauris, vel aliquam risus. Suspendisse quis blandit quam, sit amet interdum eros. Praesent sodales orci id dui commodo rhoncus at vitae leo. Vivamus scelerisque augue et est rhoncus laoreet. Donec et consequat dolor. Sed ultricies non mi et mattis. Praesent facilisis aliquet dui vel accumsan.</p>
                     <p>
                         <button 
                         className="btn btn-secondary my-2"                         
                         onClick={() => navigate("/login", { state: { from: "/dashboard" } })}
+                        aria-label="Login to access your dashboard"
                         >
                         Please login
                         </button>
@@ -55,7 +56,7 @@ function Dashboard({loggedIn}){
             )
             }           
             
-        </section>
+        </div>
     )
 }
 
