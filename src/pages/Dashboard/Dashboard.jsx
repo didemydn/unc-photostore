@@ -22,7 +22,7 @@ function Dashboard({loggedIn}){
     ]
 
     return(
-        <div className="dashboard">
+        <div className={`dashboard ${loggedIn ? "dashboard-background" : "default-background"}`}>
             {loggedIn ? (
                 <div>
                    <h5> Welcome to your Dashboard</h5>
@@ -41,7 +41,7 @@ function Dashboard({loggedIn}){
                 <div className="">
                 <div className="">
                     <h1 className="fw-light">Hello!</h1>
-                    <p className="text-body-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis luctus libero, nec facilisis magna. Integer vitae mauris felis. In ac finibus mauris, vel aliquam risus. Suspendisse quis blandit quam, sit amet interdum eros. Praesent sodales orci id dui commodo rhoncus at vitae leo. Vivamus scelerisque augue et est rhoncus laoreet. Donec et consequat dolor. Sed ultricies non mi et mattis. Praesent facilisis aliquet dui vel accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis luctus libero, nec facilisis magna. Integer vitae mauris felis. In ac finibus mauris, vel aliquam risus. Suspendisse quis blandit quam, sit amet interdum eros. Praesent sodales orci id dui commodo rhoncus at vitae leo. Vivamus scelerisque augue et est rhoncus laoreet. Donec et consequat dolor. Sed ultricies non mi et mattis. Praesent facilisis aliquet dui vel accumsan.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis luctus libero, nec facilisis magna. Integer vitae mauris felis. In ac finibus mauris, vel aliquam risus. Suspendisse quis blandit quam, sit amet interdum eros. Praesent sodales orci id dui commodo rhoncus at vitae leo. Vivamus scelerisque augue et est rhoncus laoreet. Donec et consequat dolor. Sed ultricies non mi et mattis. Praesent facilisis aliquet dui vel accumsan.</p>
+                    <p className="text-body-secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas quis luctus libero, nec facilisis magna. Integer vitae mauris felis. In ac finibus mauris, vel aliquam risus. Suspendisse quis blandit quam, sit amet interdum eros. Praesent sodales orci id dui commodo rhoncus at vitae leo. Vivamus scelerisque augue et est rhoncus laoreet. Donec et consequat dolor. Sed ultricies non mi et mattis. Praesent facilisis aliquet dui vel accumsan.</p>
                     <p>
                         <button 
                         className="btn btn-secondary my-2"                         

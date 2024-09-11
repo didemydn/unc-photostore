@@ -77,8 +77,10 @@ function Home({loggedIn}){
 
     return(
             <div className="container home">
-                <h3>Welcome to PhoSto Photo Gallery</h3>
+                <div className="head">
+                <h2><i className="fa fa-camera-retro" aria-hidden="true"></i> Welcome to PhoSto Photo Gallery</h2>
                 <p>This is a photo gallery app showcasing various photos taken by different photographers in Amsterdam. You can buy a single photo as you like and downloaded as much as you like!</p>              
+                </div>
                 <div className="row">
                     {photos.map((photo, index) => (
                         <div className="col" key={index} onClick={() => openModal(photo)}>

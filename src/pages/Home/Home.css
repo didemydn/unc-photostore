@@ -6,10 +6,16 @@
     background-color: rgb(241, 241, 240);
 }
 
+.head {
+    margin-top: 100px;
+    margin-bottom: 100px; 
+    text-align: center;
+}
 .row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    background-color: #151616;
 }
 
 .col {

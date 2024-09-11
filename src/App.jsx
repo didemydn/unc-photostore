@@ -8,6 +8,7 @@ import Menu from './components/Menu/Menu';
 import { useState } from 'react';
 import Purchase from './pages/Purchase/Purchase';
 import PageTransition from './components/PageTransition/PageTransition'
+import Footer from './components/Footer/Footer';
 
 function App() {
 
@@ -27,6 +28,7 @@ function App() {
             <Route path="/login" element={<Login loggedIn={loggedIn} setLoggedIn={setLoggedIn}></Login>}/>
           </Routes>
         </PageTransition>
+        <Footer/>
       </Router>
     </div>
   );
