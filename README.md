@@ -2,12 +2,12 @@
 
 ## Description
 
-PhoSto is a photo gallery application showcasing various photos taken by different photographers. Users can view, purchase photos. The app includes authentication features to allow users to access their personalized dashboard and profile.
+PhoSto is a modern photo gallery application in Amsterdam that allows users to view and purchase photos taken by various photographers. The app features user authentication to enable access to personalized content such as dashboards and profiles. It includes smooth page transitions and a responsive design to enhance the user experience.
 
 ## Features
 
-- **Home Page**: View a gallery of photos with details about each photo.
-- **Dashboard**: Accessible only to logged-in users, showing purchased photos.
+- **Home Page**: Displays a gallery of photos with detailed descriptions and options to view or purchase them.
+- **Dashboard**: Accessible only to logged-in users. If a user tries to access this page without logging in, they will be redirected to the login page. Once logged in, users can view their purchased photos.
 - **Profile**: View and edit user profile information (requires login).
 - **Login Page**: Allows users to log in to access additional features.
 
